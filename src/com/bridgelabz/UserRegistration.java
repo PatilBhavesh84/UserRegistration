@@ -31,7 +31,7 @@ public class UserRegistration {
 		}
 	}
 	static void checkEmail() {
-		String emailCheck="[a-z]{12}+[0-9]{4}+@bl.com";
+		String emailCheck="[a-z]{3}+[0-9]{3}+@[a-z]{2,5}.com";
 		Pattern pattern =Pattern.compile(emailCheck);
 		System.out.println("Enter Email-Id");
 		Scanner sc=new Scanner (System.in);
