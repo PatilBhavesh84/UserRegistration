@@ -58,13 +58,28 @@ public class UserRegistration {
 		else {
 			System.out.println("Invalid input");
 		}
-		sc.close();
-
+		//sc.close();
 	}
+	static void checkPassword() {
+		String passCondition="[a-z]{8}";
 
+		Pattern pattern =Pattern.compile(passCondition);
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter password");
+		String password=sc.nextLine();
+		Matcher matcher=pattern.matcher(password);
+		if(matcher.matches()) {
+			System.out.println("Valid input");
+		}
+		else {
+			System.out.println("Invalid input");
+		}
+		sc.close();
+	}
 	public static void main(String[] args) {
 		checkFirstAndLast();
 		checkEmail();
 		checkMobileNo();
+		checkPassword();
 	}
 }
