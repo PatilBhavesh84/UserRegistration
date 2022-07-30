@@ -31,13 +31,17 @@ public class UserRegistration {
 		}
 	}
 	static void checkEmail() {
-		String emailCheck="[a-z]{3}+[0-9]{3}+@[a-z]{2,5}.com";
+		String emailCheck= "[abc]{3}([-+_])?([.a-zA-Z0-9]{2})?([A-Za-z0-9]{1,})?@[a-z0-9]{1,}.[a-z]{2,3}(.[a-z]{2,3})?";
 		Pattern pattern =Pattern.compile(emailCheck);
-		//System.out.println("Enter Email-Id");
-		//Scanner sc=new Scanner (System.in);
-		String validEmailId[]= {"qwe123@gmail.com","rty213@yahoo.com",
-				"asd543@gmail.com","mbn786@yahoo.com","jkl375@gmail.com",
-				"zxs980@yahoo.com","qaz765@gmail.com","bnv345@gmail.com"};
+		
+		String validEmailId[]= {"abc@yahoo.com","abc-100@yahoo.com","abc-100@yahoo.com",
+				"abc111@abc.com","abc-100@abc.net","abc.100@abc.com.au",
+				"abc@1.com","abc@gmail.com.com","abc+100@gmail.com",
+				"abc","abc@.com.my","abc123@gmail.a","abc123@.com",
+				"abc123@.com.com",".abc@abc.com","abc()*@gmail.com",
+				"abc@%*.com","abc..2002@gmail.com","abc.@gmail.com",
+				"abc@abc@gmail.com","abc@gmail.com.1a","abc@gmail.com.aa.au",
+				"abc1..@gmail.com"};
 		for(int i=0;i<validEmailId.length;i++) {
 			Matcher email= pattern.matcher( validEmailId[i]);
 
