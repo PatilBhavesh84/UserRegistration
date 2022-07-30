@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class UserRegistration {
 	static void checkFirstAndLast() {
-		String nameCheck = "[A-Z]{1}[a-z]{3}";
+		String nameCheck = "[A-Z]{1}[a-z]{3,7}";
 		Pattern pattern = Pattern.compile(nameCheck);
 
 		Scanner sc = new Scanner(System.in);
@@ -44,10 +44,27 @@ public class UserRegistration {
 		else {
 			System.out.println("Invalid input");
 		}
-		sc.close();
 	}
+	static void checkMobileNo() {
+		String noCondition="[91]+[789]{1}+[0-9]{9}";
+		Pattern pattern =Pattern.compile(noCondition);
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter mobile number");
+		String number=sc.nextLine();
+		Matcher matcher=pattern.matcher(number);
+		if(matcher.matches()) {
+			System.out.println("Valid input");
+		}
+		else {
+			System.out.println("Invalid input");
+		}
+		sc.close();
+
+	}
+
 	public static void main(String[] args) {
 		checkFirstAndLast();
 		checkEmail();
+		checkMobileNo();
 	}
 }
