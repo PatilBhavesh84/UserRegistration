@@ -61,7 +61,7 @@ public class UserRegistration {
 		//sc.close();
 	}
 	static void checkPassword() {
-		String passCondition="[a-z]{8}";
+		String passCondition="[A-Z]{1}[a-z]{7}";
 
 		Pattern pattern =Pattern.compile(passCondition);
 		Scanner sc =new Scanner(System.in);
