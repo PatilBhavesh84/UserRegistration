@@ -31,18 +31,22 @@ public class UserRegistration {
 		}
 	}
 	static void checkEmail() {
-		String emailCheck="[a-z]{12}+[0-9]{4}+@bl.com";
+		String emailCheck="[a-z]{3}+[0-9]{3}+@[a-z]{2,5}.com";
 		Pattern pattern =Pattern.compile(emailCheck);
-		System.out.println("Enter Email-Id");
-		Scanner sc=new Scanner (System.in);
-		String emailId=sc.next();
-		Matcher email= pattern.matcher( emailId);
+		//System.out.println("Enter Email-Id");
+		//Scanner sc=new Scanner (System.in);
+		String validEmailId[]= {"qwe123@gmail.com","rty213@yahoo.com",
+				"asd543@gmail.com","mbn786@yahoo.com","jkl375@gmail.com",
+				"zxs980@yahoo.com","qaz765@gmail.com","bnv345@gmail.com"};
+		for(int i=0;i<validEmailId.length;i++) {
+			Matcher email= pattern.matcher( validEmailId[i]);
 
-		if(email.matches()) {
-			System.out.println("Valid input");
-		}
-		else {
-			System.out.println("Invalid input");
+			if(email.matches()) {
+				System.out.println("Valid input");
+			}
+			else {
+				System.out.println("Invalid input");
+			}
 		}
 	}
 	static void checkMobileNo() {
