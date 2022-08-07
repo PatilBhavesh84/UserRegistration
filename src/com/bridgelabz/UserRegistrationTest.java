@@ -1,10 +1,10 @@
 package com.bridgelabz;
 
 import static org.junit.Assert.*;
+import junit.framework.Assert;
 
 import org.junit.Test;
-import org.junit.Test;
-import org.junit.Test;
+
 public class UserRegistrationTest {
 
 	@Test
@@ -12,7 +12,7 @@ public class UserRegistrationTest {
 		UserRegistration obj1 = new UserRegistration();
 		boolean value = obj1.checkFirst("Bhavesh");
 		//test output
-		assertEquals(true,value);
+		Assert.assertEquals(true,value);
 	}
 
 	@Test
